@@ -1,0 +1,37 @@
+PageObjectModel:Design Pattern
+DataDriven:to those test cases that take data from excel sheet
+Libraries:Generic functions
+Test Drivern Developement--Hybrid FW +POM design pattern(Single Responsiblity Pattern-every single classis responsible for a single task)
+
+Not use Key Word Driven--legacy eg:1.Open browser 2.Enter URL 3.Enter un 4.Enter PW 5.Click on login--some keywords we have to 
+use and follow in same order
+
+
+POM -Martin Folwer --best practices:
+
+Page
+-for every page in your web/mobile app,we need to create a sperate page in java class--same format for oyher languages
+-never use assertions in page class
+-page actions inside page class need to provide page behaviour
+-encapsulation--all (BY) locator should be private and will be accessed via public page actions
+
+Test
+-have to use a test client :TestNG/Junit/Pytest/Mocha/Jasmine
+--assertions should be written in test class
+--never use driver apis in test class 
+
+
+If you have WebDriver APIs in your test methods, You're Doing It Wrong. -- Simon Stewart.(selenium creator)
+
+
+
+Page objects are a classic example of encapsulation - they hide the details of the UI 
+structure and widgetry from other components (the tests). It's a good design principle to 
+look for situations like this as you develop - ask yourself "how can I hide some details from the 
+rest of the software?" As with any encapsulation this yields two benefits. I've already stressed that 
+by confining logic that manipulates the UI to a single place you can modify it there without affecting 
+other components in the system. A consequential benefit is that it makes the client (test) code easier to 
+understand because the logic there is about the intention of the test and
+ not cluttered by UI details.
+ 
+ Similarly if you navigate to another page, the initial page object should return another page object for the new page
