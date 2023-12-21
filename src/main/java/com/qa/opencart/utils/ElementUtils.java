@@ -1,4 +1,4 @@
-package com.qa.opencart.utils;
+ package com.qa.opencart.utils;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -235,7 +235,7 @@ public class ElementUtils{
 public  void  clickonlanglink(By locator,String linktext) {
 	
 	List<WebElement>linklist=getElements(locator);
-	System.out.println("linklist.size()");
+	System.out.println(linklist.size());
 	
 	for (WebElement e: linklist) {
 		String text=e.getText().trim();
@@ -254,7 +254,7 @@ public List<String> getlinks(By locator,String linktext) {
 	
 	List<WebElement>linklist=getElements(locator);
 	List <String> linkstextlist= new ArrayList<String>();
-	System.out.println("linklist.size()");
+	System.out.println(linklist.size());
 	
 	for (WebElement e: linklist) {
 		String text=e.getText().trim();
@@ -449,6 +449,8 @@ public  void enterAlertText(String text,int timeOut) {
 	 waitForAlert(timeOut).sendKeys(text);;
 }
 
+//******Wait--FRAME **********//
+
 public  void waitforFrameByNameorID(String nameorID,int timeOut) {
 	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(nameorID));
@@ -465,6 +467,8 @@ public void waitforFrameWebElement(WebElement frameelement,int timeOut) {
 	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameelement));
 }
+
+
 public  void clickelementwhenready (By locator,int timeOut) {
 	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 	wait.until(ExpectedConditions.elementToBeClickable(locator)).click();;

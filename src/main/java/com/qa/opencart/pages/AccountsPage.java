@@ -16,12 +16,12 @@ public class AccountsPage {
 	private WebDriver driver;//local driver of the LoginPage class
 	private ElementUtils eleutil;
 	
-	
 	public AccountsPage(WebDriver driver) //constructor 
 	{
 		this.driver=driver;
 		eleutil= new ElementUtils(driver);
 	}
+	
 	//3.By locators-private
 	
 	private By header= By.cssSelector("div#logo a");
@@ -32,7 +32,10 @@ public class AccountsPage {
 	
 	//4.Page Actions
 	
+	
+	
 	public String getaccountpagetitle() {
+		
 		return eleutil.doGettitle(Constants.ACCOUNT_PAGE_TITLE,Constants.DEFAULT_PAGE_TIMEOUT);
 	}
 	public String getaccountpageheader() {

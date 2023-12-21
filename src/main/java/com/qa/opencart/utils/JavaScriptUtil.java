@@ -26,6 +26,7 @@ public class JavaScriptUtil {
 	private void changeColor(String color, WebElement element) {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
+		
 
 		try {
 			Thread.sleep(20);

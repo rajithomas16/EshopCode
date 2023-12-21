@@ -45,7 +45,7 @@ add the JAR file to our Java path. Java will then be able to find and use the cl
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.3.2</version>
+			<version>5.5.3</version>
 		</dependency>
 
 
@@ -108,12 +108,20 @@ add the JAR file to our Java path. Java will then be able to find and use the cl
 			<artifactId>allure-testng</artifactId>
 			<version>2.12.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>21.5.0.0</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -144,7 +152,7 @@ add the JAR file to our Java path. Java will then be able to find and use the cl
 					<argLine>
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                 </argLine>
-                
+
 				</configuration>
 				<dependencies>
 					<dependency>

@@ -76,7 +76,7 @@ public class ProductInfoPage {
 			productInfoMap.put(metakey, metavalue);//fill the hashmap one by one
 			
 		}
-	}
+	}//ask S if this needs return type
 	private void getPriceMetaData() {//private if made public testng will start calling them and it is already declared inside getProductinfo above
 		
 		List<WebElement> metaPriceList=eleutil.getElements(priceMetaData);		
