@@ -30,7 +30,7 @@ public class BaseTest {//super class of all test class in src/test/java
 	@BeforeTest
 	public void setup() {
 		df = new DriverFactory();
-		prop = df.init_properties();
+		prop = df.init_properties();//ENTIRE PROPERTY WILL BE STORED IN THIS prop REFERNCW
 		driver=df.init_driver(prop);//single driver object referenced by multiple ref ariables,here driver gets new chromedriver() 
 		//value from driverfactory
 		lp=new LoginPage(driver);//the above same driver ref is given here and it goes to loginpage class constructor

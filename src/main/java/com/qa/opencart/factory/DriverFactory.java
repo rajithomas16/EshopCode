@@ -28,6 +28,8 @@ public class DriverFactory {
 	public OptionsManager op;
 	
 	public static ThreadLocal<WebDriver> tldriver= new ThreadLocal<WebDriver>();//java feature
+	
+	
 	/**This method is to initialize the webdriver
 	 * 
 	 * @param browser
@@ -54,8 +56,10 @@ public class DriverFactory {
 		{
 			
 			WebDriverManager.firefoxdriver().setup();
-			//driver=new FirefoxDriver(op.getFirefoxOptions());
-			tldriver.set(new FirefoxDriver(op.getFirefoxOptions()));
+			WebDriver driver=WebDriverManager.firefoxdriver().create();//--new webdriver manager can create webdriver object --5.0
+			
+			driver=new FirefoxDriver(op.getFirefoxOptions());
+			//tldriver.set(new FirefoxDriver(op.getFirefoxOptions()));
 	
 		}
 		else if (browser.equalsIgnoreCase("safari")) 
@@ -122,8 +126,7 @@ public class DriverFactory {
 				switch (envName.toLowerCase()) {
 				case "dev":
 					
-						ip=new FileInputStream("./src/test/resources/Configdata/dev.config.properties");
-					
+					ip=new FileInputStream("./src/test/resources/Configdata/dev.config.properties");					
 					break;
 				case "qa":
 					ip=new FileInputStream("./src/test/resources/Configdata/qa.config.properties");
@@ -131,7 +134,6 @@ public class DriverFactory {
 				case "uat":
 					ip=new FileInputStream("./src/test/resources/Configdata/uat.config.properties");
 					break;
-				
 				default:
 					System.out.println("Pls pass right env");
 					break;
@@ -184,6 +186,9 @@ public class DriverFactory {
 		getDriver().get(url);
 	}
 	// Comment
+	
+	
+	
 	public void openURL(URL url) {
 		try {
 		if (url==null) {
